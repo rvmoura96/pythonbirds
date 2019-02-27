@@ -20,5 +20,5 @@ if __name__ == '__main__':
     # Os filhos podem ser enviados do jeito abaixo ou então através
     # de uma tupla.
     pai = Pessoa(filho, segundo_filho, nome='Evans', idade=50)
-
+    print(pai.__dict__)
     print(pai.filhos)
