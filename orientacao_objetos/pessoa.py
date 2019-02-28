@@ -1,6 +1,8 @@
 class Pessoa:
+    olhos = 2  # este é um atributo de classe.
+
     def __init__(self, *filhos, nome=None, idade=None):
-        """Inicializa os atributos da instância."""
+        """Inicializa os atributos da instância da classe."""
         self.nome = nome
         self.idade = idade
         self.filhos = list(filhos)
@@ -15,10 +17,10 @@ class Pessoa:
 
 
 if __name__ == '__main__':
-    filho = Pessoa(nome='Rose')
-    segundo_filho = Pessoa(nome='Shaw')
-    # Os filhos podem ser enviados do jeito abaixo ou então através
-    # de uma tupla.
-    pai = Pessoa(filho, segundo_filho, nome='Evans', idade=50)
-    print(pai.__dict__)
-    print(pai.filhos)
+    rose = Pessoa(nome='Rose')
+    shaw = Pessoa(nome='Shaw')
+    andrews = Pessoa(nome='Andrews')
+    evans = Pessoa(rose, shaw, andrews, nome='Evans', idade=50)
+    print(evans.__dict__)
+    print(evans.filhos)
+    
