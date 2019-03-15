@@ -20,7 +20,7 @@ A direção terá a responsabilidade de controlar a direção. Ela oferece os se
 O   L
   S
 
-  Exemplpo:
+  Exemplo:
       >>> # Testando o motor
       >>> motor = Motor()
       >>> motor.velocidade
