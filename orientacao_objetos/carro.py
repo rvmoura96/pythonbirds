@@ -1,91 +1,3 @@
-"""
-Você deve criar uma classe Carro que vai possuir dois atributos compostos por outras duas classes:
-
-1) Motor
-2) Direção
-
-O Motor terá a responsabilidade de controlar a velocidade.
-Ele oferece os seguintes atributos:
-1) Atributo de dado velocidade
-2) Método acelerar, que deverá incrementar a velocidade de uma unidade
-3)_Método frear que deverá decrementar a velocidade em duas unidades.
-
-A direção terá a responsabilidade de controlar a direção. Ela oferece os seguintes atributos:
-1) Valor de direção com valores possíveis: Norte, Sul, Leste, Oeste.
-2) Método girar_a_direita
-3) Método girar_a_esquerda
-
-
-  N
-O   L
-  S
-
-  Exemplo:
-      >>> # Testando o motor
-      >>> motor = Motor()
-      >>> motor.velocidade
-      0
-      >>> motor.acelerar()
-      >>> motor.velocidade
-      1
-      >>> motor.acelerar()
-      >>> motor.velocidade
-      2
-      >>> motor.frear()
-      0
-     >>> # Testando a direção
-     >>> direcao = Direcao()
-     >>> direcao.valor
-     'Norte'
-     >>> direcao.girar_a_direita()
-     >>> direcao.valor
-     'Leste'
-     >>> direcao.girar_a_direita()
-     >>> direcao.valor
-     'Sul'
-     >>> direcao.girar_a_direita()
-     >>> direcao.valor
-     'Oeste'
-     >>> direcao.girar_a_direita()
-     >>> direcao.valor
-     'Norte'
-    >>> direcao.girar_a_esquerda()
-    >>> direcao.valor
-    'Oeste'
-    >>> direcao.girar_a_esquerda()
-    >>> direcao.valor
-    'Sul'
-    >>> direcao.girar_a_esquerda()
-    >>> direcao.valor
-    'Leste'
-    >>> direcao.girar_a_esquerda()
-    'Norte'
-
-     >>> # Testando o carro
-    >>> carro = Carro(direcao, motor)
-    >>> carro.calcular_velocidade()
-    0
-    >>> carro.acelerar()
-    >>> carro.calcular_velocidade()
-    1
-    >>> carro.acelerar()
-    >>> carro.calcular_velocidade()
-    2
-    >>> carro.frear()
-    >>> carro.calcular_velocidade()
-    0
-    >>> carro.calcular_direcao()
-    >>> 'Norte'
-    >>> carro.girar_a_direita()
-    >>> carro.calcular_direcao()
-    >>> 'Leste'
-    >>> carro.girar_a_esquerda()
-    >>> carro.calcular_direcao()
-    >>> 'Norte'
-    >>> carro.girar_a_esquerda()
-    >>> carro.calcular_direcao()
-    >>> 'Oeste'
-"""
 from direcao import Direcao
 from motor import Motor
 
@@ -95,8 +7,76 @@ class Carro:
         self.motor = motor
         self.direcao = direcao
 
+    def acelerar(self):
+        """Chama o método acelerar da classe motor.
+
+        >>> motor = Motor()
+        >>> direcao = Direcao()
+        >>> carro = Carro(direcao, motor)
+        >>> carro.acelerar()
+        >>> carro.calcular_velocidade()
+        1
+        """
+        self.motor.acelerar()
+
+    def frear(self):
+        """Chama o método frear da classe motor.
+
+        >>> motor = Motor()
+        >>> direcao = Direcao()
+        >>> carro = Carro(direcao, motor)
+        >>> carro.acelerar()
+        >>> carro.acelerar()
+        >>> carro.calcular_velocidade()
+        2
+        >>> carro.frear()
+        >>> carro.calcular_velocidade()
+        0
+        """
+        self.motor.frear()
+
+    def girar_a_direita(self):
+        """Chama o método girar_a_direita da classe direcao.
+
+        >>> motor = Motor()
+        >>> direcao = Direcao()
+        >>> carro = Carro(direcao, motor)
+        >>> carro.girar_a_direita()
+        >>> carro.calcular_direcao()
+        'Leste'
+        """
+        self.direcao.girar_a_direita()
+
+    def girar_a_esquerda(self):
+        """Chama o método girar_a_esquerda da classe direcao.
+
+        >>> motor = Motor()
+        >>> direcao = Direcao()
+        >>> carro = Carro(direcao, motor)
+        >>> carro.girar_a_esquerda()
+        >>> carro.calcular_direcao()
+        'Oeste'
+        """
+        self.direcao.girar_a_esquerda()
+
     def calcular_velocidade(self):
+        """Calcula a velocidade armazenada na classe motor.
+
+        >>> motor = Motor()
+        >>> direcao = Direcao()
+        >>> carro = Carro(direcao, motor)
+        >>> carro.calcular_velocidade()
+        0
+        """
         return self.motor.velocidade
 
     def calcular_direcao(self):
+        """Calcula o valor da direção armazenada na classe direcao.
+
+        >>> motor = Motor()
+        >>> direcao = Direcao()
+        >>> carro = Carro(direcao, motor)
+        >>> carro.calcular_direcao()
+        'Norte'
+        """
         return self.direcao.valor
