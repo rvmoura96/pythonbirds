@@ -4,10 +4,11 @@ from motor import Motor
 
 class Carro:
     def __init__(self, direcao: Direcao, motor: Motor):
+        """Atributos de dados da classe Carro."""
         self.motor = motor
         self.direcao = direcao
 
-    def acelerar(self):
+    def acelerar(self) -> None:
         """Chama o método acelerar da classe motor.
 
         >>> motor = Motor()
@@ -19,7 +20,7 @@ class Carro:
         """
         self.motor.acelerar()
 
-    def frear(self):
+    def frear(self) -> None:
         """Chama o método frear da classe motor.
 
         >>> motor = Motor()
@@ -35,7 +36,7 @@ class Carro:
         """
         self.motor.frear()
 
-    def girar_a_direita(self):
+    def girar_a_direita(self) -> None:
         """Chama o método girar_a_direita da classe direcao.
 
         >>> motor = Motor()
@@ -47,7 +48,7 @@ class Carro:
         """
         self.direcao.girar_a_direita()
 
-    def girar_a_esquerda(self):
+    def girar_a_esquerda(self) -> None:
         """Chama o método girar_a_esquerda da classe direcao.
 
         >>> motor = Motor()
@@ -59,7 +60,7 @@ class Carro:
         """
         self.direcao.girar_a_esquerda()
 
-    def calcular_velocidade(self):
+    def calcular_velocidade(self) -> int:
         """Calcula a velocidade armazenada na classe motor.
 
         >>> motor = Motor()
@@ -70,7 +71,7 @@ class Carro:
         """
         return self.motor.velocidade
 
-    def calcular_direcao(self):
+    def calcular_direcao(self) -> str:
         """Calcula o valor da direção armazenada na classe direcao.
 
         >>> motor = Motor()
